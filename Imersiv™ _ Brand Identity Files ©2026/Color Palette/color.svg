@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #020041;
+      }
+
+      .cls-3 {
+        fill: #f102a0;
+      }
+
+      .cls-4, .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-6 {
+        fill: #127dd3;
+      }
+
+      .cls-7 {
+        fill: #8200fa;
+      }
+
+      .cls-5 {
+        font-size: 40px;
+      }
+
+      .cls-5, .cls-2 {
+        font-family: Alexandria-Light, Alexandria;
+        font-variation-settings: 'wght' 300;
+        font-weight: 300;
+      }
+
+      .cls-2 {
+        font-size: 30px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-7" x="-4.04" y="655.32" width="482.5" height="424.68"/>
+  <rect class="cls-3" x="478.46" y="655.32" width="482.5" height="424.68"/>
+  <rect class="cls-6" x="960.96" y="655.32" width="482.5" height="424.68"/>
+  <rect class="cls-4" x="1443.46" y="655.32" width="482.5" height="424.68"/>
+  <text class="cls-2" transform="translate(1499.45 889.92)"><tspan x="0" y="0">R=255 G=255 B=255 1</tspan><tspan x="0" y="36">HEX:#fff</tspan><tspan x="0" y="72">CMYK:00 00 00 00</tspan></text>
+  <text class="cls-2" transform="translate(540.34 889.92)"><tspan x="0" y="0">R=241 G=2 B=160</tspan><tspan x="0" y="36">HEX:#f102a0</tspan><tspan x="0" y="72">CMYK:04 94 00 00</tspan></text>
+  <text class="cls-2" transform="translate(81.75 889.92)"><tspan x="0" y="0">R=130 G=0 B=250</tspan><tspan x="0" y="36">HEX:#8200fa</tspan><tspan x="0" y="72">CMYK:68 80 00 00</tspan></text>
+  <text class="cls-2" transform="translate(1004.4 889.92)"><tspan x="0" y="0">R=18 G=125 B=211</tspan><tspan x="0" y="36">HEX:#127dd3</tspan><tspan x="0" y="72">CMYK:81 47 00 00</tspan></text>
+  <rect class="cls-1" x="-4.04" width="1930" height="796.13"/>
+  <text class="cls-5" transform="translate(150.3 544.49)"><tspan x="0" y="0">R=2 G=0 B=65</tspan><tspan x="0" y="48">HEX:#020041</tspan><tspan x="0" y="96">CMYK:98 95 33 57</tspan></text>
+  <text class="cls-2" transform="translate(81.75 1008.21)"><tspan x="0" y="0">Pantone 267</tspan></text>
+  <text class="cls-2" transform="translate(534.35 1008.21)"><tspan x="0" y="0">Pantone 239</tspan></text>
+  <text class="cls-5" transform="translate(150.3 702.51)"><tspan x="0" y="0">Pantone 274</tspan></text>
+</svg>
