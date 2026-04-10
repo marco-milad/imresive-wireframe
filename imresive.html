@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -7,7 +6,6 @@
 <title>IMRSIV — Website Wireframe</title>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
-/* ─── WIREFRAME TOKENS ────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#F2F0EC;
@@ -29,339 +27,225 @@
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:var(--ff-body);font-size:15px;line-height:1.6;overflow-x:hidden}
 
-/* ─── WIREFRAME UTILITY ───────────────────────────── */
-.wf-label{font-family:var(–ff-label);font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(–text-dim)}
-.wf-box{background:var(–surface);border:1.5px dashed var(–border);border-radius:var(–radius);display:flex;align-items:center;justify-content:center;font-family:var(–ff-label);font-size:11px;color:var(–text-dim);text-align:center;padding:12px}
-.wf-divider{height:1px;background:var(–border);margin:0}
-.section-tag{position:absolute;top:12px;left:12px;font-family:var(–ff-label);font-size:9px;letter-spacing:0.14em;color:var(–text-dim);background:var(–surface);border:1px solid var(–border);padding:3px 8px;border-radius:4px}
+.wf-label{font-family:var(--ff-label);font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim)}
+.wf-box{background:var(--surface);border:1.5px dashed var(--border);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-family:var(--ff-label);font-size:11px;color:var(--text-dim);text-align:center;padding:12px}
+.wf-divider{height:1px;background:var(--border);margin:0}
+.section-tag{position:absolute;top:12px;left:12px;font-family:var(--ff-label);font-size:9px;letter-spacing:0.14em;color:var(--text-dim);background:var(--surface);border:1px solid var(--border);padding:3px 8px;border-radius:4px}
 .container{max-width:1280px;margin:0 auto;padding:0 48px}
 .section{position:relative}
 
-/* ─── 1. NAVBAR ───────────────────────────────────── */
 .navbar{
 position:sticky;top:0;z-index:200;
-background:var(–white);
-border-bottom:1.5px solid var(–border);
+background:var(--white);
+border-bottom:1.5px solid var(--border);
 padding:0 48px;
 height:68px;display:flex;align-items:center;justify-content:space-between;
 }
-.nav-logo{font-family:var(–ff-label);font-size:18px;font-weight:500;letter-spacing:0.06em;color:var(–text);text-decoration:none;display:flex;align-items:center;gap:8px}
-.nav-logo-dot{width:8px;height:8px;background:var(–accent);border-radius:50%}
+.nav-logo{font-family:var(--ff-label);font-size:18px;font-weight:500;letter-spacing:0.06em;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo-dot{width:8px;height:8px;background:var(--accent);border-radius:50%}
 .nav-links{display:flex;gap:0;align-items:center;height:100%}
-.nav-links a{
-color:var(–text-mid);text-decoration:none;font-size:13px;font-weight:400;
-padding:8px 16px;border-radius:var(–radius);transition:all 0.15s;
-}
-.nav-links a:hover{color:var(–text);background:var(–surface)}
-.nav-links a.active{color:var(–text);font-weight:500}
+.nav-links a{color:var(--text-mid);text-decoration:none;font-size:13px;font-weight:400;padding:8px 16px;border-radius:var(--radius);transition:all 0.15s;}
+.nav-links a:hover{color:var(--text);background:var(--surface)}
+.nav-links a.active{color:var(--text);font-weight:500}
 
-/* Solutions Dropdown Trigger */
 .nav-dropdown{position:relative;height:100%;display:flex;align-items:center}
-.nav-dropdown-trigger{
-display:flex;align-items:center;gap:5px;
-color:var(–text-mid);font-size:13px;font-weight:400;
-padding:8px 16px;border-radius:var(–radius);cursor:pointer;
-transition:all 0.15s;user-select:none;border:none;background:none;font-family:var(–ff-body);
-}
-.nav-dropdown-trigger:hover,.nav-dropdown:hover .nav-dropdown-trigger{color:var(–text);background:var(–surface)}
+.nav-dropdown-trigger{display:flex;align-items:center;gap:5px;color:var(--text-mid);font-size:13px;font-weight:400;padding:8px 16px;border-radius:var(--radius);cursor:pointer;transition:all 0.15s;user-select:none;border:none;background:none;font-family:var(--ff-body);}
+.nav-dropdown-trigger:hover,.nav-dropdown:hover .nav-dropdown-trigger{color:var(--text);background:var(--surface)}
 .nav-dropdown-trigger svg{width:12px;height:12px;transition:transform 0.2s}
 .nav-dropdown:hover .nav-dropdown-trigger svg{transform:rotate(180deg)}
 
-/* Mega Dropdown Panel */
-.mega-dropdown{
-position:absolute;top:calc(100% + 1px);left:-24px;
-width:720px;background:var(–white);
-border:1.5px solid var(–border);border-radius:var(–radius-lg);
-box-shadow:0 8px 32px rgba(0,0,0,0.08);
-padding:28px;display:none;z-index:300;
-}
+.mega-dropdown{position:absolute;top:calc(100% + 1px);left:-24px;width:720px;background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius-lg);box-shadow:0 8px 32px rgba(0,0,0,0.08);padding:28px;display:none;z-index:300;}
 .nav-dropdown:hover .mega-dropdown{display:grid;grid-template-columns:1.1fr 1fr;gap:8px}
-.mega-col-label{font-family:var(–ff-label);font-size:9px;letter-spacing:0.14em;color:var(–text-dim);padding:0 12px;margin-bottom:8px;grid-column:1/-1}
-.mega-divider{height:1px;background:var(–border);margin:12px 0;grid-column:1/-1}
-.mega-item{
-display:flex;align-items:flex-start;gap:12px;
-padding:12px;border-radius:var(–radius);cursor:pointer;
-transition:background 0.12s;text-decoration:none;
-}
-.mega-item:hover{background:var(–surface)}
-.mega-item-icon{
-width:36px;height:36px;flex-shrink:0;
-background:var(–surface);border-radius:var(–radius);
-display:flex;align-items:center;justify-content:center;
-font-size:16px;border:1px solid var(–border);
-}
-.mega-item-text h5{font-size:13px;font-weight:500;color:var(–text);margin-bottom:2px}
-.mega-item-text p{font-size:11px;color:var(–text-dim);line-height:1.4}
-.mega-footer{
-grid-column:1/-1;margin-top:12px;padding-top:16px;
-border-top:1px solid var(–border);
-display:flex;align-items:center;justify-content:space-between;
-}
-.mega-footer p{font-size:12px;color:var(–text-mid)}
-.mega-footer a{font-size:12px;font-weight:500;color:var(–text);text-decoration:none;display:flex;align-items:center;gap:4px}
+.mega-col-label{font-family:var(--ff-label);font-size:9px;letter-spacing:0.14em;color:var(--text-dim);padding:0 12px;margin-bottom:8px;grid-column:1/-1}
+.mega-divider{height:1px;background:var(--border);margin:12px 0;grid-column:1/-1}
+.mega-item{display:flex;align-items:flex-start;gap:12px;padding:12px;border-radius:var(--radius);cursor:pointer;transition:background 0.12s;text-decoration:none;}
+.mega-item:hover{background:var(--surface)}
+.mega-item-icon{width:36px;height:36px;flex-shrink:0;background:var(--surface);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:16px;border:1px solid var(--border);}
+.mega-item-text h5{font-size:13px;font-weight:500;color:var(--text);margin-bottom:2px}
+.mega-item-text p{font-size:11px;color:var(--text-dim);line-height:1.4}
+.mega-footer{grid-column:1/-1;margin-top:12px;padding-top:16px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.mega-footer p{font-size:12px;color:var(--text-mid)}
+.mega-footer a{font-size:12px;font-weight:500;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:4px}
 
 .nav-right{display:flex;align-items:center;gap:12px}
-.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 20px;border-radius:var(–radius);font-size:13px;font-weight:500;cursor:pointer;text-decoration:none;border:1.5px solid transparent;transition:all 0.15s;font-family:var(–ff-body)}
-.btn-ghost{background:transparent;border-color:var(–border);color:var(–text-mid)}
-.btn-ghost:hover{border-color:var(–border-dark);color:var(–text)}
-.btn-solid{background:var(–accent-fill);color:var(–white);border-color:var(–accent-fill)}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 20px;border-radius:var(--radius);font-size:13px;font-weight:500;cursor:pointer;text-decoration:none;border:1.5px solid transparent;transition:all 0.15s;font-family:var(--ff-body)}
+.btn-ghost{background:transparent;border-color:var(--border);color:var(--text-mid)}
+.btn-ghost:hover{border-color:var(--border-dark);color:var(--text)}
+.btn-solid{background:var(--accent-fill);color:var(--white);border-color:var(--accent-fill)}
 .btn-solid:hover{opacity:0.85}
 
-/* ─── 2. HERO ─────────────────────────────────────── */
-.hero{
-background:var(–text);color:var(–white);
-min-height:680px;display:flex;flex-direction:column;justify-content:flex-end;
-padding:80px 48px;position:relative;overflow:hidden;
-}
-.hero-grid{
-position:absolute;inset:0;
-background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);
-background-size:72px 72px;
-}
-.hero-badge{
-display:inline-flex;align-items:center;gap:8px;
-border:1px solid rgba(255,255,255,0.15);
-padding:6px 14px;border-radius:100px;
-font-family:var(–ff-label);font-size:10px;letter-spacing:0.12em;
-color:rgba(255,255,255,0.55);margin-bottom:28px;width:fit-content;
-position:relative;z-index:1;
-}
+.hero{background:var(--text);color:var(--white);min-height:680px;display:flex;flex-direction:column;justify-content:flex-end;padding:80px 48px;position:relative;overflow:hidden;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:72px 72px;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,0.15);padding:6px 14px;border-radius:100px;font-family:var(--ff-label);font-size:10px;letter-spacing:0.12em;color:rgba(255,255,255,0.55);margin-bottom:28px;width:fit-content;position:relative;z-index:1;}
 .hero-badge-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.5);animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
-.hero h1{
-font-family:var(–ff-body);font-size:clamp(48px,5.5vw,80px);
-font-weight:600;line-height:1.05;letter-spacing:-0.02em;
-color:var(–white);position:relative;z-index:1;max-width:860px;
-}
+.hero h1{font-family:var(--ff-body);font-size:clamp(48px,5.5vw,80px);font-weight:600;line-height:1.05;letter-spacing:-0.02em;color:var(--white);position:relative;z-index:1;max-width:860px;}
 .hero h1 em{font-style:normal;color:rgba(255,255,255,0.35)}
-.hero-sub{
-font-size:16px;color:rgba(255,255,255,0.55);max-width:580px;
-margin:24px 0 40px;font-weight:300;position:relative;z-index:1;
-}
+.hero-sub{font-size:16px;color:rgba(255,255,255,0.55);max-width:580px;margin:24px 0 40px;font-weight:300;position:relative;z-index:1;}
 .hero-actions{display:flex;gap:12px;position:relative;z-index:1}
-.btn-hero-primary{background:var(–white);color:var(–text);padding:14px 28px;border-radius:var(–radius);font-size:14px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:6px;border:none;cursor:pointer;font-family:var(–ff-body)}
-.btn-hero-ghost{background:transparent;color:rgba(255,255,255,0.7);padding:14px 28px;border-radius:var(–radius);font-size:14px;font-weight:400;text-decoration:none;display:inline-flex;align-items:center;gap:6px;border:1.5px solid rgba(255,255,255,0.15);cursor:pointer;font-family:var(–ff-body)}
-.hero-stats{
-display:flex;gap:0;margin-top:60px;
-border-top:1px solid rgba(255,255,255,0.08);padding-top:40px;
-position:relative;z-index:1;
-}
+.btn-hero-primary{background:var(--white);color:var(--text);padding:14px 28px;border-radius:var(--radius);font-size:14px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:6px;border:none;cursor:pointer;font-family:var(--ff-body)}
+.btn-hero-ghost{background:transparent;color:rgba(255,255,255,0.7);padding:14px 28px;border-radius:var(--radius);font-size:14px;font-weight:400;text-decoration:none;display:inline-flex;align-items:center;gap:6px;border:1.5px solid rgba(255,255,255,0.15);cursor:pointer;font-family:var(--ff-body)}
+.hero-stats{display:flex;gap:0;margin-top:60px;border-top:1px solid rgba(255,255,255,0.08);padding-top:40px;position:relative;z-index:1;}
 .stat-item{flex:1;padding-right:32px;border-right:1px solid rgba(255,255,255,0.08)}
 .stat-item:last-child{border-right:none;padding-left:32px;padding-right:0}
 .stat-item:not(:first-child){padding-left:32px}
-.stat-num{font-family:var(–ff-label);font-size:28px;font-weight:500;color:var(–white);display:block;letter-spacing:-0.01em}
+.stat-num{font-family:var(--ff-label);font-size:28px;font-weight:500;color:var(--white);display:block;letter-spacing:-0.01em}
 .stat-lbl{font-size:12px;color:rgba(255,255,255,0.40);margin-top:4px;display:block}
 
-/* ─── 3. SOLUTIONS TAB BAR ────────────────────────── */
-.solutions{background:var(–white);padding:80px 0 0}
+.solutions{background:var(--white);padding:80px 0 0}
 .solutions-header{padding:0 48px;margin-bottom:48px}
-.solutions-header h2{font-size:36px;font-weight:600;letter-spacing:-0.02em;color:var(–text);margin-bottom:12px}
-.solutions-header p{font-size:15px;color:var(–text-mid);max-width:580px}
+.solutions-header h2{font-size:36px;font-weight:600;letter-spacing:-0.02em;color:var(--text);margin-bottom:12px}
+.solutions-header p{font-size:15px;color:var(--text-mid);max-width:580px}
 
-/* Tab strip */
-.tab-strip{
-display:flex;border-bottom:1.5px solid var(–border);
-padding:0 48px;overflow-x:auto;
-scrollbar-width:none;
-}
+.tab-strip{display:flex;border-bottom:1.5px solid var(--border);padding:0 48px;overflow-x:auto;scrollbar-width:none;}
 .tab-strip::-webkit-scrollbar{display:none}
-.tab-item{
-display:flex;align-items:center;gap:10px;
-padding:14px 24px;border-bottom:2.5px solid transparent;
-margin-bottom:-1.5px;cursor:pointer;white-space:nowrap;
-font-size:13px;font-weight:400;color:var(–text-mid);
-transition:all 0.15s;user-select:none;
-}
-.tab-item:hover{color:var(–text)}
-.tab-item.active{color:var(–text);font-weight:500;border-bottom-color:var(–accent)}
-.tab-icon{width:20px;height:20px;background:var(–surface);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0}
-.tab-item.active .tab-icon{background:var(–text);color:var(–white)}
+.tab-item{display:flex;align-items:center;gap:10px;padding:14px 24px;border-bottom:2.5px solid transparent;margin-bottom:-1.5px;cursor:pointer;white-space:nowrap;font-size:13px;font-weight:400;color:var(--text-mid);transition:all 0.15s;user-select:none;}
+.tab-item:hover{color:var(--text)}
+.tab-item.active{color:var(--text);font-weight:500;border-bottom-color:var(--accent)}
+.tab-icon{width:20px;height:20px;background:var(--surface);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0}
+.tab-item.active .tab-icon{background:var(--text);color:var(--white)}
 
-/* Tab content */
 .tab-content{display:none;padding:48px}
 .tab-content.active{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
-.tab-text h3{font-size:26px;font-weight:600;letter-spacing:-0.01em;margin-bottom:16px;color:var(–text)}
-.tab-text p{font-size:14px;color:var(–text-mid);line-height:1.7;margin-bottom:28px}
+.tab-text h3{font-size:26px;font-weight:600;letter-spacing:-0.01em;margin-bottom:16px;color:var(--text)}
+.tab-text p{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:28px}
 .feat-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:36px}
-.feat-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(–text-mid)}
-.feat-dot{width:6px;height:6px;background:var(–border-dark);border-radius:50%;margin-top:6px;flex-shrink:0}
-.tab-visual{aspect-ratio:4/3;background:var(–surface);border:1.5px dashed var(–border);border-radius:var(–radius-lg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
-.tab-visual-icon{width:48px;height:48px;background:var(–surface2);border-radius:var(–radius);display:flex;align-items:center;justify-content:center;font-size:22px}
-.tab-visual span{font-family:var(–ff-label);font-size:10px;color:var(–text-dim);letter-spacing:0.1em}
+.feat-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text-mid)}
+.feat-dot{width:6px;height:6px;background:var(--border-dark);border-radius:50%;margin-top:6px;flex-shrink:0}
+.tab-visual{aspect-ratio:4/3;background:var(--surface);border:1.5px dashed var(--border);border-radius:var(--radius-lg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.tab-visual-icon{width:48px;height:48px;background:var(--surface2);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:22px}
+.tab-visual span{font-family:var(--ff-label);font-size:10px;color:var(--text-dim);letter-spacing:0.1em}
 
-/* ─── 4. INDUSTRIES ───────────────────────────────── */
-.industries{background:var(–bg);padding:80px 48px}
+.industries{background:var(--bg);padding:80px 48px}
 .section-header{margin-bottom:48px}
-.section-header h2{font-size:34px;font-weight:600;letter-spacing:-0.02em;color:var(–text);margin-bottom:10px}
-.section-header p{font-size:15px;color:var(–text-mid)}
+.section-header h2{font-size:34px;font-weight:600;letter-spacing:-0.02em;color:var(--text);margin-bottom:10px}
+.section-header p{font-size:15px;color:var(--text-mid)}
 .industries-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.industry-card{background:var(–white);border:1.5px solid var(–border);border-radius:var(–radius-lg);padding:24px;transition:border-color 0.2s;cursor:pointer}
-.industry-card:hover{border-color:var(–border-dark)}
-.industry-icon{width:40px;height:40px;background:var(–surface);border-radius:var(–radius);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:16px}
-.industry-card h4{font-size:14px;font-weight:500;color:var(–text);margin-bottom:6px}
-.industry-card p{font-size:12px;color:var(–text-mid);line-height:1.5}
+.industry-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:24px;transition:border-color 0.2s;cursor:pointer}
+.industry-card:hover{border-color:var(--border-dark)}
+.industry-icon{width:40px;height:40px;background:var(--surface);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:16px}
+.industry-card h4{font-size:14px;font-weight:500;color:var(--text);margin-bottom:6px}
+.industry-card p{font-size:12px;color:var(--text-mid);line-height:1.5}
 
-/* ─── 5. PARTNERS ─────────────────────────────────── */
-.partners{background:var(–white);padding:64px 48px;border-top:1.5px solid var(–border)}
+.partners{background:var(--white);padding:64px 48px;border-top:1.5px solid var(--border)}
 .partners-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:48px}
-.partners-header h2{font-size:28px;font-weight:600;letter-spacing:-0.02em;color:var(–text)}
-.partners-header p{font-size:14px;color:var(–text-mid);max-width:360px;text-align:right}
-.partners-row{display:flex;align-items:center;gap:0;border:1.5px solid var(–border);border-radius:var(–radius-lg);overflow:hidden;margin-bottom:16px}
-.partner-cell{
-flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
-padding:28px 20px;gap:10px;border-right:1.5px solid var(–border);
-transition:background 0.15s;cursor:pointer;min-height:100px;
-}
+.partners-header h2{font-size:28px;font-weight:600;letter-spacing:-0.02em;color:var(--text)}
+.partners-header p{font-size:14px;color:var(--text-mid);max-width:360px;text-align:right}
+.partners-row{display:flex;align-items:center;gap:0;border:1.5px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:16px}
+.partner-cell{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 20px;gap:10px;border-right:1.5px solid var(--border);transition:background 0.15s;cursor:pointer;min-height:100px;}
 .partner-cell:last-child{border-right:none}
-.partner-cell:hover{background:var(–surface)}
-.partner-logo-box{
-width:56px;height:32px;background:var(–surface);border-radius:4px;
-display:flex;align-items:center;justify-content:center;
-font-family:var(–ff-label);font-size:9px;color:var(–text-dim);
-letter-spacing:0.08em;border:1px solid var(–border);
-}
-.partner-name{font-size:12px;font-weight:500;color:var(–text-mid)}
-.partner-type{font-family:var(–ff-label);font-size:9px;color:var(–text-dim);letter-spacing:0.1em}
-.partner-badge{
-display:inline-flex;align-items:center;gap:4px;
-background:var(–surface);border:1px solid var(–border);
-border-radius:100px;padding:3px 10px;
-font-family:var(–ff-label);font-size:9px;letter-spacing:0.08em;color:var(–text-mid);
-margin-top:4px;
-}
+.partner-cell:hover{background:var(--surface)}
+.partner-logo-box{width:56px;height:32px;background:var(--surface);border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:var(--ff-label);font-size:9px;color:var(--text-dim);letter-spacing:0.08em;border:1px solid var(--border);}
+.partner-name{font-size:12px;font-weight:500;color:var(--text-mid)}
+.partner-type{font-family:var(--ff-label);font-size:9px;color:var(--text-dim);letter-spacing:0.1em}
+.partner-badge{display:inline-flex;align-items:center;gap:4px;background:var(--surface);border:1px solid var(--border);border-radius:100px;padding:3px 10px;font-family:var(--ff-label);font-size:9px;letter-spacing:0.08em;color:var(--text-mid);margin-top:4px;}
 .partner-badge.gold{background:#FBF5E6;border-color:#D4A843;color:#8B6914}
 .partner-badge.certified{background:#EAF4F0;border-color:#3A9D7A;color:#1F6B50}
-.partners-trust{
-display:flex;align-items:center;justify-content:center;gap:32px;
-margin-top:32px;padding-top:24px;border-top:1px solid var(–border);
-}
-.trust-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(–text-dim)}
-.trust-dot{width:6px;height:6px;background:var(–border-dark);border-radius:50%}
+.partners-trust{display:flex;align-items:center;justify-content:center;gap:32px;margin-top:32px;padding-top:24px;border-top:1px solid var(--border);}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim)}
+.trust-dot{width:6px;height:6px;background:var(--border-dark);border-radius:50%}
 
-/* ─── 6. CUSTOMER JOURNEY ─────────────────────────── */
-.journey{background:var(–bg);padding:80px 48px;overflow:hidden}
+.journey{background:var(--bg);padding:80px 48px;overflow:hidden}
 .journey-header{margin-bottom:56px}
-.journey-header h2{font-size:34px;font-weight:600;letter-spacing:-0.02em;color:var(–text);margin-bottom:10px}
-.journey-header p{font-size:15px;color:var(–text-mid);max-width:560px}
-
+.journey-header h2{font-size:34px;font-weight:600;letter-spacing:-0.02em;color:var(--text);margin-bottom:10px}
+.journey-header p{font-size:15px;color:var(--text-mid);max-width:560px}
 .journey-phases{display:flex;gap:8px;margin-bottom:48px;flex-wrap:wrap}
-.phase-btn{
-display:flex;align-items:center;gap:8px;padding:9px 18px;border-radius:100px;
-cursor:pointer;font-size:12px;font-weight:500;border:1.5px solid var(–border);
-background:var(–white);color:var(–text-mid);transition:all 0.15s;font-family:var(–ff-body);
-}
-.phase-btn:hover{border-color:var(–border-dark);color:var(–text)}
-.phase-btn.active{background:var(–text);color:var(–white);border-color:var(–text)}
-.phase-num{width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-family:var(–ff-label);font-size:9px}
-.phase-btn:not(.active) .phase-num{background:var(–surface);color:var(–text-dim)}
-
+.phase-btn{display:flex;align-items:center;gap:8px;padding:9px 18px;border-radius:100px;cursor:pointer;font-size:12px;font-weight:500;border:1.5px solid var(--border);background:var(--white);color:var(--text-mid);transition:all 0.15s;font-family:var(--ff-body);}
+.phase-btn:hover{border-color:var(--border-dark);color:var(--text)}
+.phase-btn.active{background:var(--text);color:var(--white);border-color:var(--text)}
+.phase-num{width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-family:var(--ff-label);font-size:9px}
+.phase-btn:not(.active) .phase-num{background:var(--surface);color:var(--text-dim)}
 .journey-track{position:relative}
-.journey-connector{position:absolute;top:36px;left:7%;right:7%;height:1.5px;background:repeating-linear-gradient(90deg,var(–border) 0,var(–border) 8px,transparent 8px,transparent 16px);z-index:0}
+.journey-connector{position:absolute;top:36px;left:7%;right:7%;height:1.5px;background:repeating-linear-gradient(90deg,var(--border) 0,var(--border) 8px,transparent 8px,transparent 16px);z-index:0}
 .journey-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;z-index:1}
 .journey-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 12px}
-.step-node{width:72px;height:72px;border-radius:50%;background:var(–white);border:2px solid var(–border);display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;transition:all 0.2s;cursor:pointer;position:relative}
-.step-node:hover{border-color:var(–border-dark);background:var(–surface)}
-.step-node.active{background:var(–text);border-color:var(–text)}
+.step-node{width:72px;height:72px;border-radius:50%;background:var(--white);border:2px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;transition:all 0.2s;cursor:pointer;position:relative}
+.step-node:hover{border-color:var(--border-dark);background:var(--surface)}
+.step-node.active{background:var(--text);border-color:var(--text)}
 .step-node.active .step-icon,.step-node.active .step-n{color:rgba(255,255,255,0.9)}
 .step-node.active .step-n{color:rgba(255,255,255,0.45)}
 .step-icon{font-size:20px;line-height:1}
-.step-n{font-family:var(–ff-label);font-size:8px;color:var(–text-dim);letter-spacing:0.1em;margin-top:2px}
-.step-label{font-size:13px;font-weight:500;color:var(–text);margin-bottom:6px}
-.step-desc{font-size:11px;color:var(–text-mid);line-height:1.5}
+.step-n{font-family:var(--ff-label);font-size:8px;color:var(--text-dim);letter-spacing:0.1em;margin-top:2px}
+.step-label{font-size:13px;font-weight:500;color:var(--text);margin-bottom:6px}
+.step-desc{font-size:11px;color:var(--text-mid);line-height:1.5}
 .step-tools{display:flex;flex-wrap:wrap;justify-content:center;gap:4px;margin-top:10px}
-.step-tool-tag{font-family:var(–ff-label);font-size:8px;letter-spacing:0.06em;padding:2px 7px;border-radius:4px;background:var(–surface);border:1px solid var(–border);color:var(–text-dim)}
-
-.journey-detail{margin-top:48px;background:var(–white);border:1.5px solid var(–border);border-radius:var(–radius-lg);padding:36px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px}
-.journey-detail-col h4{font-size:13px;font-weight:500;color:var(–text);margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(–border)}
+.step-tool-tag{font-family:var(--ff-label);font-size:8px;letter-spacing:0.06em;padding:2px 7px;border-radius:4px;background:var(--surface);border:1px solid var(--border);color:var(--text-dim)}
+.journey-detail{margin-top:48px;background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:36px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px}
+.journey-detail-col h4{font-size:13px;font-weight:500;color:var(--text);margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--border)}
 .journey-detail-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
-.journey-detail-col ul li{font-size:12px;color:var(–text-mid);display:flex;align-items:flex-start;gap:7px}
-.jd-dot{width:5px;height:5px;background:var(–border-dark);border-radius:50%;margin-top:5px;flex-shrink:0}
-.journey-kpi{background:var(–surface);border-radius:var(–radius);padding:14px 16px;margin-top:12px}
-.journey-kpi span{font-family:var(–ff-label);font-size:22px;font-weight:500;color:var(–text);display:block}
-.journey-kpi p{font-size:11px;color:var(–text-dim);margin-top:2px}
+.journey-detail-col ul li{font-size:12px;color:var(--text-mid);display:flex;align-items:flex-start;gap:7px}
+.jd-dot{width:5px;height:5px;background:var(--border-dark);border-radius:50%;margin-top:5px;flex-shrink:0}
+.journey-kpi{background:var(--surface);border-radius:var(--radius);padding:14px 16px;margin-top:12px}
+.journey-kpi span{font-family:var(--ff-label);font-size:22px;font-weight:500;color:var(--text);display:block}
+.journey-kpi p{font-size:11px;color:var(--text-dim);margin-top:2px}
 
-/* ─── 7. CAMERAS ──────────────────────────────────── */
-.cameras{background:var(–text);padding:80px 48px;color:var(–white)}
-.cameras .section-header h2{color:var(–white)}
+.cameras{background:var(--text);padding:80px 48px;color:var(--white)}
+.cameras .section-header h2{color:var(--white)}
 .cameras .section-header p{color:rgba(255,255,255,0.45)}
 .cameras-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.camera-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(–radius-lg);overflow:hidden}
+.camera-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-lg);overflow:hidden}
 .camera-img{aspect-ratio:4/3;background:rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:28px}
 .camera-body{padding:20px}
-.camera-tag{display:inline-flex;align-items:center;padding:3px 10px;border-radius:100px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);font-family:var(–ff-label);font-size:9px;letter-spacing:0.1em;color:rgba(255,255,255,0.45);margin-bottom:12px}
-.camera-card h4{font-size:14px;font-weight:500;color:var(–white);margin-bottom:6px}
+.camera-tag{display:inline-flex;align-items:center;padding:3px 10px;border-radius:100px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);font-family:var(--ff-label);font-size:9px;letter-spacing:0.1em;color:rgba(255,255,255,0.45);margin-bottom:12px}
+.camera-card h4{font-size:14px;font-weight:500;color:var(--white);margin-bottom:6px}
 .camera-card p{font-size:12px;color:rgba(255,255,255,0.4);line-height:1.5}
 
-/* ─── 6. QUOTE FORM ───────────────────────────────── */
-.quote-section{background:var(–white);padding:80px 48px}
+.quote-section{background:var(--white);padding:80px 48px}
 .quote-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start}
-.quote-info h2{font-size:34px;font-weight:600;letter-spacing:-0.02em;color:var(–text);margin-bottom:14px}
-.quote-info p{font-size:15px;color:var(–text-mid);margin-bottom:36px}
+.quote-info h2{font-size:34px;font-weight:600;letter-spacing:-0.02em;color:var(--text);margin-bottom:14px}
+.quote-info p{font-size:15px;color:var(--text-mid);margin-bottom:36px}
 .perks-list{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:36px}
-.perks-list li{display:flex;align-items:center;gap:10px;font-size:13px;color:var(–text-mid)}
-.perk-check{width:18px;height:18px;background:var(–surface);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;border:1px solid var(–border)}
-.zoho-badge{background:var(–surface);border:1.5px solid var(–border);border-radius:var(–radius-lg);padding:20px 24px}
-.zoho-badge h5{font-size:13px;font-weight:500;color:var(–text);margin-bottom:4px}
-.zoho-badge p{font-size:12px;color:var(–text-mid)}
-.form-panel{background:var(–surface);border:1.5px solid var(–border);border-radius:var(–radius-lg);padding:36px}
+.perks-list li{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-mid)}
+.perk-check{width:18px;height:18px;background:var(--surface);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;border:1px solid var(--border)}
+.zoho-badge{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px}
+.zoho-badge h5{font-size:13px;font-weight:500;color:var(--text);margin-bottom:4px}
+.zoho-badge p{font-size:12px;color:var(--text-mid)}
+.form-panel{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:36px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
 .form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
-.form-group label{font-size:12px;font-weight:500;color:var(–text-mid);font-family:var(–ff-label);letter-spacing:0.04em}
-.form-control{background:var(–white);border:1.5px solid var(–border);border-radius:var(–radius);padding:10px 14px;font-size:13px;color:var(–text);font-family:var(–ff-body);outline:none;transition:border-color 0.15s;width:100%}
-.form-control:focus{border-color:var(–border-dark)}
-.form-control.select::after{content:‘▾’}
+.form-group label{font-size:12px;font-weight:500;color:var(--text-mid);font-family:var(--ff-label);letter-spacing:0.04em}
+.form-control{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:10px 14px;font-size:13px;color:var(--text);font-family:var(--ff-body);outline:none;transition:border-color 0.15s;width:100%}
+.form-control:focus{border-color:var(--border-dark)}
 select.form-control{appearance:none;cursor:pointer}
 textarea.form-control{resize:none;height:88px}
-.form-submit{width:100%;background:var(–accent-fill);color:var(–white);border:none;border-radius:var(–radius);padding:14px;font-size:14px;font-weight:500;cursor:pointer;font-family:var(–ff-body);margin-top:8px;transition:opacity 0.15s}
+.form-submit{width:100%;background:var(--accent-fill);color:var(--white);border:none;border-radius:var(--radius);padding:14px;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--ff-body);margin-top:8px;transition:opacity 0.15s}
 .form-submit:hover{opacity:0.85}
 
-/* ─── 7. SUCCESS STORIES ──────────────────────────── */
-.stories{background:var(–bg);padding:80px 48px}
+.stories{background:var(--bg);padding:80px 48px}
 .stories-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.story-card{background:var(–white);border:1.5px solid var(–border);border-radius:var(–radius-lg);padding:28px;display:flex;flex-direction:column;gap:16px}
+.story-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:28px;display:flex;flex-direction:column;gap:16px}
 .story-meta{display:flex;align-items:center;gap:10px}
-.story-avatar{width:40px;height:40px;background:var(–surface2);border-radius:var(–radius);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
-.story-title{font-size:13px;font-weight:500;color:var(–text);line-height:1.3}
-.story-country{font-family:var(–ff-label);font-size:9px;color:var(–text-dim);letter-spacing:0.08em}
-.story-quote{font-size:13px;color:var(–text-mid);line-height:1.6;font-style:italic;border-left:2px solid var(–border);padding-left:12px}
-.story-tag{display:inline-flex;padding:4px 12px;background:var(–surface);border-radius:100px;font-family:var(–ff-label);font-size:9px;letter-spacing:0.08em;color:var(–text-mid);width:fit-content;border:1px solid var(–border)}
+.story-avatar{width:40px;height:40px;background:var(--surface2);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.story-title{font-size:13px;font-weight:500;color:var(--text);line-height:1.3}
+.story-country{font-family:var(--ff-label);font-size:9px;color:var(--text-dim);letter-spacing:0.08em}
+.story-quote{font-size:13px;color:var(--text-mid);line-height:1.6;font-style:italic;border-left:2px solid var(--border);padding-left:12px}
+.story-tag{display:inline-flex;padding:4px 12px;background:var(--surface);border-radius:100px;font-family:var(--ff-label);font-size:9px;letter-spacing:0.08em;color:var(--text-mid);width:fit-content;border:1px solid var(--border)}
 
-/* ─── 8. CONSULTATION CTA ─────────────────────────── */
-.cta-section{
-background:var(–text);padding:80px 48px;
-display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;
-}
-.cta-text h2{font-size:36px;font-weight:600;letter-spacing:-0.02em;color:var(–white);margin-bottom:12px;max-width:640px}
+.cta-section{background:var(--text);padding:80px 48px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;}
+.cta-text h2{font-size:36px;font-weight:600;letter-spacing:-0.02em;color:var(--white);margin-bottom:12px;max-width:640px}
 .cta-text p{font-size:15px;color:rgba(255,255,255,0.45);max-width:520px}
 .cta-actions{display:flex;flex-direction:column;gap:10px;min-width:220px}
-.btn-cta-primary{background:var(–white);color:var(–text);padding:14px 28px;border-radius:var(–radius);font-size:14px;font-weight:500;text-align:center;cursor:pointer;border:none;font-family:var(–ff-body)}
-.btn-cta-ghost{background:transparent;color:rgba(255,255,255,0.6);padding:14px 28px;border-radius:var(–radius);font-size:14px;font-weight:400;text-align:center;cursor:pointer;border:1.5px solid rgba(255,255,255,0.12);font-family:var(–ff-body)}
+.btn-cta-primary{background:var(--white);color:var(--text);padding:14px 28px;border-radius:var(--radius);font-size:14px;font-weight:500;text-align:center;cursor:pointer;border:none;font-family:var(--ff-body)}
+.btn-cta-ghost{background:transparent;color:rgba(255,255,255,0.6);padding:14px 28px;border-radius:var(--radius);font-size:14px;font-weight:400;text-align:center;cursor:pointer;border:1.5px solid rgba(255,255,255,0.12);font-family:var(--ff-body)}
 
-/* ─── 9. FOOTER ───────────────────────────────────── */
-.footer{background:var(–text);border-top:1px solid rgba(255,255,255,0.07);padding:60px 48px 40px}
+.footer{background:var(--text);border-top:1px solid rgba(255,255,255,0.07);padding:60px 48px 40px}
 .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
 .footer-brand .nav-logo{margin-bottom:12px;display:inline-flex}
 .footer-brand p{font-size:12px;color:rgba(255,255,255,0.35);max-width:200px;line-height:1.6}
-.footer-col h5{font-family:var(–ff-label);font-size:10px;letter-spacing:0.12em;color:rgba(255,255,255,0.35);margin-bottom:16px;text-transform:uppercase}
+.footer-col h5{font-family:var(--ff-label);font-size:10px;letter-spacing:0.12em;color:rgba(255,255,255,0.35);margin-bottom:16px;text-transform:uppercase}
 .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
 .footer-col ul li a{font-size:13px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.15s}
 .footer-col ul li a:hover{color:rgba(255,255,255,0.85)}
 .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:28px;display:flex;justify-content:space-between;align-items:center}
-.footer-bottom p{font-size:11px;color:rgba(255,255,255,0.25);font-family:var(–ff-label);letter-spacing:0.04em}
+.footer-bottom p{font-size:11px;color:rgba(255,255,255,0.25);font-family:var(--ff-label);letter-spacing:0.04em}
 .footer-badges{display:flex;gap:12px}
-.footer-badge{font-family:var(–ff-label);font-size:9px;letter-spacing:0.1em;color:rgba(255,255,255,0.25);border:1px solid rgba(255,255,255,0.1);padding:4px 10px;border-radius:4px}
+.footer-badge{font-family:var(--ff-label);font-size:9px;letter-spacing:0.1em;color:rgba(255,255,255,0.25);border:1px solid rgba(255,255,255,0.1);padding:4px 10px;border-radius:4px}
 
-/* ─── ANNOTATIONS ─────────────────────────────────── */
-.wf-annotations{
-position:fixed;bottom:16px;right:16px;
-background:var(–white);border:1.5px solid var(–border);border-radius:var(–radius-lg);
-padding:16px 20px;z-index:200;max-width:220px;
-}
-.wf-annotations h6{font-family:var(–ff-label);font-size:9px;letter-spacing:0.12em;color:var(–text-dim);margin-bottom:10px}
-.annotation-item{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:11px;color:var(–text-mid)}
-.ann-num{font-family:var(–ff-label);font-size:9px;width:18px;height:18px;background:var(–text);color:var(–white);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.wf-annotations{position:fixed;bottom:16px;right:16px;background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:16px 20px;z-index:200;max-width:220px;}
+.wf-annotations h6{font-family:var(--ff-label);font-size:9px;letter-spacing:0.12em;color:var(--text-dim);margin-bottom:10px}
+.annotation-item{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:11px;color:var(--text-mid)}
+.ann-num{font-family:var(--ff-label);font-size:9px;width:18px;height:18px;background:var(--text);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 
-/* ─── RESPONSIVE HELPERS ──────────────────────────── */
 @media(max-width:900px){
 .industries-grid,.cameras-grid,.stories-grid{grid-template-columns:repeat(2,1fr)}
 .cta-section{grid-template-columns:1fr;gap:32px}
@@ -370,13 +254,8 @@ padding:16px 20px;z-index:200;max-width:220px;
 .tab-content.active{grid-template-columns:1fr}
 }
 </style>
-
 </head>
 <body>
-
-<!-- ══════════════════════════════════════════════════
-     1. NAVBAR
-══════════════════════════════════════════════════ -->
 
 <nav class="navbar">
   <a href="#" class="nav-logo">
@@ -385,108 +264,66 @@ padding:16px 20px;z-index:200;max-width:220px;
   </a>
   <div class="nav-links">
     <a href="#" class="active">Home</a>
-
-```
-<!-- Solutions Mega Dropdown -->
-<div class="nav-dropdown">
-  <button class="nav-dropdown-trigger">
-    Solutions
-    <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4l4 4 4-4"/></svg>
-  </button>
-  <div class="mega-dropdown">
-    <div class="mega-col-label">IMMERSIVE TECHNOLOGY</div>
-
-    <a href="#solutions" class="mega-item">
-      <div class="mega-item-icon">▣</div>
-      <div class="mega-item-text">
-        <h5>Virtual Tours &amp; 3D Spaces</h5>
-        <p>Matterport-powered 3D digital twins for any space</p>
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-trigger">
+        Solutions
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4l4 4 4-4"/></svg>
+      </button>
+      <div class="mega-dropdown">
+        <div class="mega-col-label">IMMERSIVE TECHNOLOGY</div>
+        <a href="#solutions" class="mega-item">
+          <div class="mega-item-icon">▣</div>
+          <div class="mega-item-text"><h5>Virtual Tours &amp; 3D Spaces</h5><p>Matterport-powered 3D digital twins for any space</p></div>
+        </a>
+        <a href="#cameras" class="mega-item">
+          <div class="mega-item-icon">◎</div>
+          <div class="mega-item-text"><h5>360° Camera Capture Services</h5><p>On-site scanning with Pro3, Pro2, Theta &amp; DJI</p></div>
+        </a>
+        <div class="mega-divider"></div>
+        <div class="mega-col-label">BUSINESS AUTOMATION</div>
+        <a href="#quote" class="mega-item">
+          <div class="mega-item-icon">⊞</div>
+          <div class="mega-item-text"><h5>Zoho CRM &amp; ERP</h5><p>Full Zoho One implementation &amp; customization</p></div>
+        </a>
+        <a href="#quote" class="mega-item">
+          <div class="mega-item-icon">⊡</div>
+          <div class="mega-item-text"><h5>Zoho Books &amp; Finance</h5><p>Accounting, invoicing &amp; expense management</p></div>
+        </a>
+        <a href="#quote" class="mega-item">
+          <div class="mega-item-icon">⊟</div>
+          <div class="mega-item-text"><h5>Zoho Desk &amp; Support</h5><p>Customer support ticketing &amp; helpdesk setup</p></div>
+        </a>
+        <a href="#quote" class="mega-item">
+          <div class="mega-item-icon">⊕</div>
+          <div class="mega-item-text"><h5>Zoho Campaigns &amp; Marketing</h5><p>Email marketing, automation &amp; lead nurturing</p></div>
+        </a>
+        <div class="mega-divider"></div>
+        <div class="mega-col-label">AI &amp; CUSTOM DEVELOPMENT</div>
+        <a href="#quote" class="mega-item">
+          <div class="mega-item-icon">◈</div>
+          <div class="mega-item-text"><h5>AI Chatbots &amp; Agents</h5><p>Custom GPT-powered bots for WhatsApp &amp; web</p></div>
+        </a>
+        <a href="#quote" class="mega-item">
+          <div class="mega-item-icon">⬡</div>
+          <div class="mega-item-text"><h5>Custom Software Development</h5><p>React, Flutter &amp; Node.js full-stack builds</p></div>
+        </a>
+        <a href="#quote" class="mega-item">
+          <div class="mega-item-icon">⊗</div>
+          <div class="mega-item-text"><h5>API Integrations &amp; Automation</h5><p>Connect your stack — Zoho, Matterport, WhatsApp</p></div>
+        </a>
+        <a href="#quote" class="mega-item">
+          <div class="mega-item-icon">◉</div>
+          <div class="mega-item-text"><h5>Digital Transformation Package</h5><p>End-to-end strategy, build &amp; ongoing support</p></div>
+        </a>
+        <div class="mega-footer">
+          <p>Not sure which solution fits? Talk to an expert.</p>
+          <a href="#consult">Book Free Consultation →</a>
+        </div>
       </div>
-    </a>
-    <a href="#cameras" class="mega-item">
-      <div class="mega-item-icon">◎</div>
-      <div class="mega-item-text">
-        <h5>360° Camera Capture Services</h5>
-        <p>On-site scanning with Pro3, Pro2, Theta &amp; DJI</p>
-      </div>
-    </a>
-
-    <div class="mega-divider"></div>
-    <div class="mega-col-label">BUSINESS AUTOMATION</div>
-
-    <a href="#quote" class="mega-item">
-      <div class="mega-item-icon">⊞</div>
-      <div class="mega-item-text">
-        <h5>Zoho CRM &amp; ERP</h5>
-        <p>Full Zoho One implementation &amp; customization</p>
-      </div>
-    </a>
-    <a href="#quote" class="mega-item">
-      <div class="mega-item-icon">⊡</div>
-      <div class="mega-item-text">
-        <h5>Zoho Books &amp; Finance</h5>
-        <p>Accounting, invoicing &amp; expense management</p>
-      </div>
-    </a>
-    <a href="#quote" class="mega-item">
-      <div class="mega-item-icon">⊟</div>
-      <div class="mega-item-text">
-        <h5>Zoho Desk &amp; Support</h5>
-        <p>Customer support ticketing &amp; helpdesk setup</p>
-      </div>
-    </a>
-    <a href="#quote" class="mega-item">
-      <div class="mega-item-icon">⊕</div>
-      <div class="mega-item-text">
-        <h5>Zoho Campaigns &amp; Marketing</h5>
-        <p>Email marketing, automation &amp; lead nurturing</p>
-      </div>
-    </a>
-
-    <div class="mega-divider"></div>
-    <div class="mega-col-label">AI &amp; CUSTOM DEVELOPMENT</div>
-
-    <a href="#quote" class="mega-item">
-      <div class="mega-item-icon">◈</div>
-      <div class="mega-item-text">
-        <h5>AI Chatbots &amp; Agents</h5>
-        <p>Custom GPT-powered bots for WhatsApp &amp; web</p>
-      </div>
-    </a>
-    <a href="#quote" class="mega-item">
-      <div class="mega-item-icon">⬡</div>
-      <div class="mega-item-text">
-        <h5>Custom Software Development</h5>
-        <p>React, Flutter &amp; Node.js full-stack builds</p>
-      </div>
-    </a>
-    <a href="#quote" class="mega-item">
-      <div class="mega-item-icon">⊗</div>
-      <div class="mega-item-text">
-        <h5>API Integrations &amp; Automation</h5>
-        <p>Connect your stack — Zoho, Matterport, WhatsApp</p>
-      </div>
-    </a>
-    <a href="#quote" class="mega-item">
-      <div class="mega-item-icon">◉</div>
-      <div class="mega-item-text">
-        <h5>Digital Transformation Package</h5>
-        <p>End-to-end strategy, build &amp; ongoing support</p>
-      </div>
-    </a>
-
-    <div class="mega-footer">
-      <p>Not sure which solution fits? Talk to an expert.</p>
-      <a href="#consult">Book Free Consultation →</a>
     </div>
-  </div>
-</div>
-
-<a href="#partners">Partners</a>
-<a href="#stories">Success Stories</a>
-<a href="#consult">Contact</a>
-```
-
+    <a href="#partners">Partners</a>
+    <a href="#stories">Success Stories</a>
+    <a href="#consult">Contact</a>
   </div>
   <div class="nav-right">
     <a href="#consult" class="btn btn-ghost">Book Consultation</a>
@@ -494,85 +331,39 @@ padding:16px 20px;z-index:200;max-width:220px;
   </div>
 </nav>
 
-<!-- ══════════════════════════════════════════════════
-     2. HERO
-══════════════════════════════════════════════════ -->
-
 <section class="hero section">
   <div class="hero-grid"></div>
-  <span class="section-tag">SECTION 01 · HERO</span>
-
-  <div class="hero-badge">
-    <span class="hero-badge-dot"></span>
-    MENA'S LEADING DIGITAL TRANSFORMATION PARTNER
-  </div>
-
+  <div class="hero-badge"><span class="hero-badge-dot"></span>MENA'S LEADING DIGITAL TRANSFORMATION PARTNER</div>
   <h1>Your Business,<br><em>Transformed.</em></h1>
   <p class="hero-sub">Certified Zoho Partner &amp; Matterport specialist. We help MENA enterprises grow through immersive 3D, AI-powered chatbots, and intelligent automation.</p>
-
   <div class="hero-actions">
     <a href="#quote" class="btn-hero-primary">Get Instant Quote →</a>
     <a href="#consult" class="btn-hero-ghost">Book Free Consultation</a>
   </div>
-
   <div class="hero-stats">
-    <div class="stat-item">
-      <span class="stat-num">150+</span>
-      <span class="stat-lbl">Projects Delivered</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">40+</span>
-      <span class="stat-lbl">Enterprise Clients</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">6</span>
-      <span class="stat-lbl">MENA Countries</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">100%</span>
-      <span class="stat-lbl">Zoho Certified</span>
-    </div>
+    <div class="stat-item"><span class="stat-num">150+</span><span class="stat-lbl">Projects Delivered</span></div>
+    <div class="stat-item"><span class="stat-num">40+</span><span class="stat-lbl">Enterprise Clients</span></div>
+    <div class="stat-item"><span class="stat-num">6</span><span class="stat-lbl">MENA Countries</span></div>
+    <div class="stat-item"><span class="stat-num">100%</span><span class="stat-lbl">Zoho Certified</span></div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-     3. SOLUTIONS — MATTERPORT-STYLE TAB BAR
-══════════════════════════════════════════════════ -->
-
 <section class="solutions section" id="solutions">
-  <span class="section-tag">SECTION 03 · SOLUTIONS TAB BAR</span>
-
   <div class="solutions-header">
     <h2>One Partner. Every Solution.</h2>
     <p>From immersive 3D spaces to enterprise automation — IMRSIV is your single partner for digital transformation in MENA.</p>
   </div>
-
-  <!-- Tab Strip -->
-
   <div class="tab-strip" id="tabStrip">
-    <div class="tab-item active" data-tab="tours">
-      <span class="tab-icon">▣</span> Virtual Tours
-    </div>
-    <div class="tab-item" data-tab="zoho">
-      <span class="tab-icon">⊞</span> Zoho Suite
-    </div>
-    <div class="tab-item" data-tab="ai">
-      <span class="tab-icon">◈</span> AI Chatbots
-    </div>
-    <div class="tab-item" data-tab="cameras">
-      <span class="tab-icon">◎</span> 360° Cameras
-    </div>
-    <div class="tab-item" data-tab="dev">
-      <span class="tab-icon">⬡</span> Custom Software
-    </div>
+    <div class="tab-item active" data-tab="tours"><span class="tab-icon">▣</span> Virtual Tours</div>
+    <div class="tab-item" data-tab="zoho"><span class="tab-icon">⊞</span> Zoho Suite</div>
+    <div class="tab-item" data-tab="ai"><span class="tab-icon">◈</span> AI Chatbots</div>
+    <div class="tab-item" data-tab="cameras"><span class="tab-icon">◎</span> 360° Cameras</div>
+    <div class="tab-item" data-tab="dev"><span class="tab-icon">⬡</span> Custom Software</div>
   </div>
-
-  <!-- Tab: Virtual Tours -->
-
   <div class="tab-content active" id="tab-tours">
     <div class="tab-text">
       <h3>Virtual Tours &amp; 3D Digital Twins</h3>
-      <p>Using Matterport Pro cameras, we create photorealistic 3D digital twins of any space — real estate, hotels, factories, universities, and retail showrooms. Embeddable anywhere, viewable by anyone.</p>
+      <p>Using Matterport Pro cameras, we create photorealistic 3D digital twins of any space — real estate, hotels, factories, universities, and retail showrooms.</p>
       <ul class="feat-list">
         <li><span class="feat-dot"></span>HDR photography + LiDAR depth scanning</li>
         <li><span class="feat-dot"></span>Embeddable virtual tour links &amp; iframe</li>
@@ -582,18 +373,12 @@ padding:16px 20px;z-index:200;max-width:220px;
       </ul>
       <a href="#quote" class="btn btn-solid">Request Virtual Tour Quote →</a>
     </div>
-    <div class="tab-visual">
-      <div class="tab-visual-icon">▣</div>
-      <span>VIRTUAL TOUR 3D PREVIEW / MATTERPORT EMBED</span>
-    </div>
+    <div class="tab-visual"><div class="tab-visual-icon">▣</div><span>VIRTUAL TOUR 3D PREVIEW</span></div>
   </div>
-
-  <!-- Tab: Zoho -->
-
   <div class="tab-content" id="tab-zoho">
     <div class="tab-text">
       <h3>Zoho CRM, ERP &amp; Full Suite</h3>
-      <p>As a certified Zoho Partner, we implement, customize, and integrate the entire Zoho ecosystem — from CRM to Books, from Desk to Campaigns. One platform, every department.</p>
+      <p>As a certified Zoho Partner, we implement, customize, and integrate the entire Zoho ecosystem — from CRM to Books, from Desk to Campaigns.</p>
       <ul class="feat-list">
         <li><span class="feat-dot"></span>Zoho CRM + Zoho One implementation</li>
         <li><span class="feat-dot"></span>Custom modules &amp; workflow automation</li>
@@ -603,18 +388,12 @@ padding:16px 20px;z-index:200;max-width:220px;
       </ul>
       <a href="#quote" class="btn btn-solid">Get Zoho Consultation →</a>
     </div>
-    <div class="tab-visual">
-      <div class="tab-visual-icon">⊞</div>
-      <span>ZOHO CRM DASHBOARD PREVIEW</span>
-    </div>
+    <div class="tab-visual"><div class="tab-visual-icon">⊞</div><span>ZOHO CRM DASHBOARD PREVIEW</span></div>
   </div>
-
-  <!-- Tab: AI Chatbots -->
-
   <div class="tab-content" id="tab-ai">
     <div class="tab-text">
       <h3>AI-Powered Chatbots &amp; Agents</h3>
-      <p>Custom AI chatbots trained on your business data — handling customer queries, lead qualification, booking, and support. Integrated with your CRM and WhatsApp.</p>
+      <p>Custom AI chatbots trained on your business data — handling customer queries, lead qualification, booking, and support.</p>
       <ul class="feat-list">
         <li><span class="feat-dot"></span>Custom GPT-powered agents</li>
         <li><span class="feat-dot"></span>WhatsApp Business API integration</li>
@@ -624,18 +403,12 @@ padding:16px 20px;z-index:200;max-width:220px;
       </ul>
       <a href="#quote" class="btn btn-solid">Build Your AI Chatbot →</a>
     </div>
-    <div class="tab-visual">
-      <div class="tab-visual-icon">◈</div>
-      <span>AI CHATBOT INTERFACE PREVIEW</span>
-    </div>
+    <div class="tab-visual"><div class="tab-visual-icon">◈</div><span>AI CHATBOT INTERFACE PREVIEW</span></div>
   </div>
-
-  <!-- Tab: 360° Cameras -->
-
   <div class="tab-content" id="tab-cameras">
     <div class="tab-text">
       <h3>360° Camera Capture Services</h3>
-      <p>Our team arrives on-site with Matterport Pro3, Pro2, Ricoh Theta, and DJI Mavic equipment — capturing every angle with professional precision and speed.</p>
+      <p>Our team arrives on-site with Matterport Pro3, Pro2, Ricoh Theta, and DJI Mavic equipment — capturing every angle with professional precision.</p>
       <ul class="feat-list">
         <li><span class="feat-dot"></span>Indoor &amp; outdoor LiDAR scanning</li>
         <li><span class="feat-dot"></span>Aerial drone photography</li>
@@ -645,18 +418,12 @@ padding:16px 20px;z-index:200;max-width:220px;
       </ul>
       <a href="#quote" class="btn btn-solid">Schedule a Shoot →</a>
     </div>
-    <div class="tab-visual">
-      <div class="tab-visual-icon">◎</div>
-      <span>CAMERA EQUIPMENT &amp; SAMPLE CAPTURE</span>
-    </div>
+    <div class="tab-visual"><div class="tab-visual-icon">◎</div><span>CAMERA EQUIPMENT &amp; SAMPLE CAPTURE</span></div>
   </div>
-
-  <!-- Tab: Custom Dev -->
-
   <div class="tab-content" id="tab-dev">
     <div class="tab-text">
       <h3>Custom Software Development</h3>
-      <p>Full-stack web and mobile applications tailored to your processes — built on modern frameworks and deeply integrated with your existing tools and Zoho ecosystem.</p>
+      <p>Full-stack web and mobile applications tailored to your processes — built on modern frameworks and deeply integrated with your existing tools.</p>
       <ul class="feat-list">
         <li><span class="feat-dot"></span>React / Flutter / Node.js development</li>
         <li><span class="feat-dot"></span>Zoho Creator custom apps</li>
@@ -666,159 +433,50 @@ padding:16px 20px;z-index:200;max-width:220px;
       </ul>
       <a href="#quote" class="btn btn-solid">Discuss Your Project →</a>
     </div>
-    <div class="tab-visual">
-      <div class="tab-visual-icon">⬡</div>
-      <span>CUSTOM SOFTWARE ARCHITECTURE DIAGRAM</span>
-    </div>
+    <div class="tab-visual"><div class="tab-visual-icon">⬡</div><span>CUSTOM SOFTWARE ARCHITECTURE</span></div>
   </div>
 </section>
 
 <div class="wf-divider"></div>
 
-<!-- ══════════════════════════════════════════════════
-     4. INDUSTRIES
-══════════════════════════════════════════════════ -->
-
 <section class="industries section" id="industries">
-  <span class="section-tag">SECTION 04 · INDUSTRIES</span>
   <div class="section-header">
     <h2>Industries We Serve</h2>
     <p>Deep domain expertise across MENA's key economic sectors.</p>
   </div>
   <div class="industries-grid">
-    <div class="industry-card">
-      <div class="industry-icon">🏢</div>
-      <h4>Real Estate</h4>
-      <p>Virtual tours, CRM automation, lead management &amp; off-plan sales portals.</p>
-    </div>
-    <div class="industry-card">
-      <div class="industry-icon">🏨</div>
-      <h4>Hospitality</h4>
-      <p>360° hotel walkthroughs, booking engine integration, guest journey automation.</p>
-    </div>
-    <div class="industry-card">
-      <div class="industry-icon">🏭</div>
-      <h4>Manufacturing</h4>
-      <p>Facility digital twins, ERP integration, safety compliance documentation.</p>
-    </div>
-    <div class="industry-card">
-      <div class="industry-icon">🎓</div>
-      <h4>Education</h4>
-      <p>Campus virtual tours, student portals, LMS integration &amp; enrollment automation.</p>
-    </div>
-    <div class="industry-card">
-      <div class="industry-icon">🛍</div>
-      <h4>Retail</h4>
-      <p>Showroom tours, inventory systems, e-commerce &amp; customer analytics.</p>
-    </div>
-    <div class="industry-card">
-      <div class="industry-icon">🏥</div>
-      <h4>Healthcare</h4>
-      <p>Clinic tours, patient journey automation, appointment &amp; record management.</p>
-    </div>
-    <div class="industry-card">
-      <div class="industry-icon">⚖</div>
-      <h4>Legal &amp; Finance</h4>
-      <p>Document automation, client portal, CRM &amp; compliance workflows.</p>
-    </div>
-    <div class="industry-card">
-      <div class="industry-icon">🏗</div>
-      <h4>Construction</h4>
-      <p>Site progress digital twins, Procore sync, defect tracking &amp; stakeholder access.</p>
-    </div>
+    <div class="industry-card"><div class="industry-icon">🏢</div><h4>Real Estate</h4><p>Virtual tours, CRM automation, lead management &amp; off-plan sales portals.</p></div>
+    <div class="industry-card"><div class="industry-icon">🏨</div><h4>Hospitality</h4><p>360° hotel walkthroughs, booking engine integration, guest journey automation.</p></div>
+    <div class="industry-card"><div class="industry-icon">🏭</div><h4>Manufacturing</h4><p>Facility digital twins, ERP integration, safety compliance documentation.</p></div>
+    <div class="industry-card"><div class="industry-icon">🎓</div><h4>Education</h4><p>Campus virtual tours, student portals, LMS integration &amp; enrollment automation.</p></div>
+    <div class="industry-card"><div class="industry-icon">🛍</div><h4>Retail</h4><p>Showroom tours, inventory systems, e-commerce &amp; customer analytics.</p></div>
+    <div class="industry-card"><div class="industry-icon">🏥</div><h4>Healthcare</h4><p>Clinic tours, patient journey automation, appointment &amp; record management.</p></div>
+    <div class="industry-card"><div class="industry-icon">⚖</div><h4>Legal &amp; Finance</h4><p>Document automation, client portal, CRM &amp; compliance workflows.</p></div>
+    <div class="industry-card"><div class="industry-icon">🏗</div><h4>Construction</h4><p>Site progress digital twins, Procore sync, defect tracking &amp; stakeholder access.</p></div>
   </div>
 </section>
 
 <div class="wf-divider"></div>
 
-<div class="wf-divider"></div>
-
-<!-- ══════════════════════════════════════════════════
-     5. SUCCESS PARTNERS
-══════════════════════════════════════════════════ -->
-
 <section class="partners section" id="partners">
-  <span class="section-tag">SECTION 05 · SUCCESS PARTNERS</span>
   <div class="partners-header">
-    <div>
-      <h2>Our Trusted Partners</h2>
-      <p style="font-size:14px;color:var(--text-mid);margin-top:6px">The platforms and brands that power every IMRSIV solution.</p>
-    </div>
+    <div><h2>Our Trusted Partners</h2><p style="font-size:14px;color:var(--text-mid);margin-top:6px">The platforms and brands that power every IMRSIV solution.</p></div>
     <p>Official partner &amp; reseller status across<br>MENA's leading technology platforms.</p>
   </div>
-
-  <!-- Row 1: Software Partners -->
-
   <div class="partners-row">
-    <div class="partner-cell">
-      <div class="partner-logo-box">ZOHO</div>
-      <div class="partner-name">Zoho</div>
-      <div class="partner-type">CRM · ERP · FULL SUITE</div>
-      <span class="partner-badge certified">✓ CERTIFIED PARTNER</span>
-    </div>
-    <div class="partner-cell">
-      <div class="partner-logo-box">MTRPRT</div>
-      <div class="partner-name">Matterport</div>
-      <div class="partner-type">3D CAPTURE · DIGITAL TWINS</div>
-      <span class="partner-badge certified">✓ SPECIALIST</span>
-    </div>
-    <div class="partner-cell">
-      <div class="partner-logo-box">MSFT</div>
-      <div class="partner-name">Microsoft</div>
-      <div class="partner-type">AZURE · OFFICE 365</div>
-      <span class="partner-badge">RESELLER</span>
-    </div>
-    <div class="partner-cell">
-      <div class="partner-logo-box">AWS</div>
-      <div class="partner-name">Amazon Web Services</div>
-      <div class="partner-type">CLOUD INFRASTRUCTURE</div>
-      <span class="partner-badge">REGISTERED</span>
-    </div>
-    <div class="partner-cell">
-      <div class="partner-logo-box">TWILIO</div>
-      <div class="partner-name">Twilio</div>
-      <div class="partner-type">WHATSAPP · SMS · VOICE</div>
-      <span class="partner-badge">INTEGRATION PARTNER</span>
-    </div>
+    <div class="partner-cell"><div class="partner-logo-box">ZOHO</div><div class="partner-name">Zoho</div><div class="partner-type">CRM · ERP · FULL SUITE</div><span class="partner-badge certified">✓ CERTIFIED PARTNER</span></div>
+    <div class="partner-cell"><div class="partner-logo-box">MTRPRT</div><div class="partner-name">Matterport</div><div class="partner-type">3D CAPTURE · DIGITAL TWINS</div><span class="partner-badge certified">✓ SPECIALIST</span></div>
+    <div class="partner-cell"><div class="partner-logo-box">MSFT</div><div class="partner-name">Microsoft</div><div class="partner-type">AZURE · OFFICE 365</div><span class="partner-badge">RESELLER</span></div>
+    <div class="partner-cell"><div class="partner-logo-box">AWS</div><div class="partner-name">Amazon Web Services</div><div class="partner-type">CLOUD INFRASTRUCTURE</div><span class="partner-badge">REGISTERED</span></div>
+    <div class="partner-cell"><div class="partner-logo-box">TWILIO</div><div class="partner-name">Twilio</div><div class="partner-type">WHATSAPP · SMS · VOICE</div><span class="partner-badge">INTEGRATION PARTNER</span></div>
   </div>
-
-  <!-- Row 2: Hardware & Platform Partners -->
-
   <div class="partners-row">
-    <div class="partner-cell">
-      <div class="partner-logo-box">DJI</div>
-      <div class="partner-name">DJI</div>
-      <div class="partner-type">AERIAL · DRONE CAPTURE</div>
-      <span class="partner-badge">AUTHORIZED RESELLER</span>
-    </div>
-    <div class="partner-cell">
-      <div class="partner-logo-box">RICOH</div>
-      <div class="partner-name">Ricoh Theta</div>
-      <div class="partner-type">360° CAMERA · PORTABLE</div>
-      <span class="partner-badge">EQUIPMENT PARTNER</span>
-    </div>
-    <div class="partner-cell">
-      <div class="partner-logo-box">OPENAI</div>
-      <div class="partner-name">OpenAI</div>
-      <div class="partner-type">GPT · AI CHATBOTS</div>
-      <span class="partner-badge">API PARTNER</span>
-    </div>
-    <div class="partner-cell">
-      <div class="partner-logo-box">PROCORE</div>
-      <div class="partner-name">Procore</div>
-      <div class="partner-type">CONSTRUCTION TECH</div>
-      <span class="partner-badge">INTEGRATION PARTNER</span>
-    </div>
-    <div class="partner-cell">
-      <div class="partner-logo-box">META</div>
-      <div class="partner-name">Meta Business</div>
-      <div class="partner-type">WHATSAPP API · ADS</div>
-      <span class="partner-badge gold">★ GOLD PARTNER</span>
-    </div>
+    <div class="partner-cell"><div class="partner-logo-box">DJI</div><div class="partner-name">DJI</div><div class="partner-type">AERIAL · DRONE CAPTURE</div><span class="partner-badge">AUTHORIZED RESELLER</span></div>
+    <div class="partner-cell"><div class="partner-logo-box">RICOH</div><div class="partner-name">Ricoh Theta</div><div class="partner-type">360° CAMERA · PORTABLE</div><span class="partner-badge">EQUIPMENT PARTNER</span></div>
+    <div class="partner-cell"><div class="partner-logo-box">OPENAI</div><div class="partner-name">OpenAI</div><div class="partner-type">GPT · AI CHATBOTS</div><span class="partner-badge">API PARTNER</span></div>
+    <div class="partner-cell"><div class="partner-logo-box">PROCORE</div><div class="partner-name">Procore</div><div class="partner-type">CONSTRUCTION TECH</div><span class="partner-badge">INTEGRATION PARTNER</span></div>
+    <div class="partner-cell"><div class="partner-logo-box">META</div><div class="partner-name">Meta Business</div><div class="partner-type">WHATSAPP API · ADS</div><span class="partner-badge gold">★ GOLD PARTNER</span></div>
   </div>
-
-  <!-- Trust bar -->
-
   <div class="partners-trust">
     <div class="trust-item"><span class="trust-dot"></span> 10+ Active Technology Partnerships</div>
     <div class="trust-item"><span class="trust-dot"></span> Official Reseller Status in MENA</div>
@@ -827,20 +485,11 @@ padding:16px 20px;z-index:200;max-width:220px;
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-     6. CUSTOMER JOURNEY
-══════════════════════════════════════════════════ -->
-
 <section class="journey section" id="journey">
-  <span class="section-tag">SECTION 06 · CUSTOMER JOURNEY</span>
-
   <div class="journey-header">
     <h2>How We Work Together</h2>
     <p>From first contact to long-term growth — a clear, proven process that gets results every time.</p>
   </div>
-
-  <!-- Phase filter tabs -->
-
   <div class="journey-phases">
     <button class="phase-btn active" data-phase="all"><span class="phase-num">★</span> Full Journey</button>
     <button class="phase-btn" data-phase="discover"><span class="phase-num">1</span> Discovery</button>
@@ -849,92 +498,41 @@ padding:16px 20px;z-index:200;max-width:220px;
     <button class="phase-btn" data-phase="launch"><span class="phase-num">4</span> Launch</button>
     <button class="phase-btn" data-phase="grow"><span class="phase-num">5</span> Growth</button>
   </div>
-
-  <!-- Journey timeline track -->
-
   <div class="journey-track">
     <div class="journey-connector"></div>
     <div class="journey-steps">
-
-```
-  <!-- Step 1 -->
-  <div class="journey-step" data-phase="discover">
-    <div class="step-node active">
-      <span class="step-icon">◎</span>
-      <span class="step-n">01</span>
-    </div>
-    <div class="step-label">Discovery Call</div>
-    <div class="step-desc">Free 30-min consultation. We audit your current stack, pain points, and goals.</div>
-    <div class="step-tools">
-      <span class="step-tool-tag">ZOOM / MEET</span>
-      <span class="step-tool-tag">ZOHO CRM</span>
-    </div>
-  </div>
-
-  <!-- Step 2 -->
-  <div class="journey-step" data-phase="plan">
-    <div class="step-node">
-      <span class="step-icon">⊞</span>
-      <span class="step-n">02</span>
-    </div>
-    <div class="step-label">Strategy &amp; Proposal</div>
-    <div class="step-desc">Custom roadmap + tailored proposal delivered within 48 hours of discovery.</div>
-    <div class="step-tools">
-      <span class="step-tool-tag">ZOHO PROJECTS</span>
-      <span class="step-tool-tag">PROPOSAL DOC</span>
-    </div>
-  </div>
-
-  <!-- Step 3 -->
-  <div class="journey-step" data-phase="build">
-    <div class="step-node">
-      <span class="step-icon">⬡</span>
-      <span class="step-n">03</span>
-    </div>
-    <div class="step-label">Build &amp; Configure</div>
-    <div class="step-desc">Our team implements, configures, and tests — Matterport scans, Zoho setup, AI bots, dev.</div>
-    <div class="step-tools">
-      <span class="step-tool-tag">MATTERPORT</span>
-      <span class="step-tool-tag">ZOHO ONE</span>
-      <span class="step-tool-tag">GPT API</span>
+      <div class="journey-step" data-phase="discover">
+        <div class="step-node active"><span class="step-icon">◎</span><span class="step-n">01</span></div>
+        <div class="step-label">Discovery Call</div>
+        <div class="step-desc">Free 30-min consultation. We audit your current stack, pain points, and goals.</div>
+        <div class="step-tools"><span class="step-tool-tag">ZOOM / MEET</span><span class="step-tool-tag">ZOHO CRM</span></div>
+      </div>
+      <div class="journey-step" data-phase="plan">
+        <div class="step-node"><span class="step-icon">⊞</span><span class="step-n">02</span></div>
+        <div class="step-label">Strategy &amp; Proposal</div>
+        <div class="step-desc">Custom roadmap + tailored proposal delivered within 48 hours of discovery.</div>
+        <div class="step-tools"><span class="step-tool-tag">ZOHO PROJECTS</span><span class="step-tool-tag">PROPOSAL DOC</span></div>
+      </div>
+      <div class="journey-step" data-phase="build">
+        <div class="step-node"><span class="step-icon">⬡</span><span class="step-n">03</span></div>
+        <div class="step-label">Build &amp; Configure</div>
+        <div class="step-desc">Our team implements, configures, and tests — Matterport scans, Zoho setup, AI bots.</div>
+        <div class="step-tools"><span class="step-tool-tag">MATTERPORT</span><span class="step-tool-tag">ZOHO ONE</span><span class="step-tool-tag">GPT API</span></div>
+      </div>
+      <div class="journey-step" data-phase="launch">
+        <div class="step-node"><span class="step-icon">▣</span><span class="step-n">04</span></div>
+        <div class="step-label">Training &amp; Launch</div>
+        <div class="step-desc">Hands-on training for your team. Soft launch, QA, and go-live with full support.</div>
+        <div class="step-tools"><span class="step-tool-tag">LIVE TRAINING</span><span class="step-tool-tag">ZOHO DESK</span></div>
+      </div>
+      <div class="journey-step" data-phase="grow">
+        <div class="step-node"><span class="step-icon">◈</span><span class="step-n">05</span></div>
+        <div class="step-label">Optimize &amp; Grow</div>
+        <div class="step-desc">Monthly reviews, performance reports, feature expansions, and ongoing partnership.</div>
+        <div class="step-tools"><span class="step-tool-tag">ZOHO ANALYTICS</span><span class="step-tool-tag">RETAINER</span></div>
+      </div>
     </div>
   </div>
-
-  <!-- Step 4 -->
-  <div class="journey-step" data-phase="launch">
-    <div class="step-node">
-      <span class="step-icon">▣</span>
-      <span class="step-n">04</span>
-    </div>
-    <div class="step-label">Training &amp; Launch</div>
-    <div class="step-desc">Hands-on training for your team. Soft launch, QA, and go-live with full support.</div>
-    <div class="step-tools">
-      <span class="step-tool-tag">LIVE TRAINING</span>
-      <span class="step-tool-tag">ZOHO DESK</span>
-    </div>
-  </div>
-
-  <!-- Step 5 -->
-  <div class="journey-step" data-phase="grow">
-    <div class="step-node">
-      <span class="step-icon">◈</span>
-      <span class="step-n">05</span>
-    </div>
-    <div class="step-label">Optimize &amp; Grow</div>
-    <div class="step-desc">Monthly reviews, performance reports, feature expansions, and ongoing partnership.</div>
-    <div class="step-tools">
-      <span class="step-tool-tag">ZOHO ANALYTICS</span>
-      <span class="step-tool-tag">RETAINER</span>
-    </div>
-  </div>
-
-</div>
-```
-
-  </div>
-
-  <!-- Detail panel — shown on step click -->
-
   <div class="journey-detail" id="journeyDetail">
     <div class="journey-detail-col">
       <h4>What Happens</h4>
@@ -958,218 +556,102 @@ padding:16px 20px;z-index:200;max-width:220px;
     </div>
     <div class="journey-detail-col">
       <h4>Key Metrics</h4>
-      <div class="journey-kpi">
-        <span>30 min</span>
-        <p>Average discovery call duration</p>
-      </div>
-      <div class="journey-kpi" style="margin-top:10px">
-        <span>48 hrs</span>
-        <p>Proposal delivered after discovery</p>
-      </div>
-      <div class="journey-kpi" style="margin-top:10px">
-        <span>100%</span>
-        <p>Free — no obligation to proceed</p>
-      </div>
+      <div class="journey-kpi"><span>30 min</span><p>Average discovery call duration</p></div>
+      <div class="journey-kpi" style="margin-top:10px"><span>48 hrs</span><p>Proposal delivered after discovery</p></div>
+      <div class="journey-kpi" style="margin-top:10px"><span>100%</span><p>Free — no obligation to proceed</p></div>
     </div>
   </div>
 </section>
 
 <div class="wf-divider"></div>
 
-<!-- ══════════════════════════════════════════════════
-     7. CAMERAS
-══════════════════════════════════════════════════ -->
-
 <section class="cameras section" id="cameras">
-  <span class="section-tag" style="color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1)">SECTION 07 · EQUIPMENT</span>
   <div class="section-header">
     <h2>Our Equipment</h2>
     <p>We invest in the world's best capture hardware — so your spaces look extraordinary.</p>
   </div>
   <div class="cameras-grid">
-    <div class="camera-card">
-      <div class="camera-img">📷</div>
-      <div class="camera-body">
-        <span class="camera-tag">FLAGSHIP · INDOOR + OUTDOOR</span>
-        <h4>Matterport Pro3</h4>
-        <p>LiDAR depth + 20MP color. Indoor &amp; outdoor. Used by top real estate agencies globally.</p>
-      </div>
-    </div>
-    <div class="camera-card">
-      <div class="camera-img">📸</div>
-      <div class="camera-body">
-        <span class="camera-tag">INDOOR · HIGH ACCURACY</span>
-        <h4>Matterport Pro2</h4>
-        <p>134MP color, 3D accuracy to ±1%. The trusted workhorse for large commercial spaces.</p>
-      </div>
-    </div>
-    <div class="camera-card">
-      <div class="camera-img">🔭</div>
-      <div class="camera-body">
-        <span class="camera-tag">PORTABLE · 360°</span>
-        <h4>Ricoh Theta Z1</h4>
-        <p>Ultra-portable 360° capture for quick site walks and progress documentation.</p>
-      </div>
-    </div>
-    <div class="camera-card">
-      <div class="camera-img">🚁</div>
-      <div class="camera-body">
-        <span class="camera-tag">AERIAL · DRONE</span>
-        <h4>DJI Mavic 3 Pro</h4>
-        <p>Exterior captures, construction progress, and large estate fly-throughs.</p>
-      </div>
-    </div>
+    <div class="camera-card"><div class="camera-img">📷</div><div class="camera-body"><span class="camera-tag">FLAGSHIP · INDOOR + OUTDOOR</span><h4>Matterport Pro3</h4><p>LiDAR depth + 20MP color. Indoor &amp; outdoor. Used by top real estate agencies globally.</p></div></div>
+    <div class="camera-card"><div class="camera-img">📸</div><div class="camera-body"><span class="camera-tag">INDOOR · HIGH ACCURACY</span><h4>Matterport Pro2</h4><p>134MP color, 3D accuracy to ±1%. The trusted workhorse for large commercial spaces.</p></div></div>
+    <div class="camera-card"><div class="camera-img">🔭</div><div class="camera-body"><span class="camera-tag">PORTABLE · 360°</span><h4>Ricoh Theta Z1</h4><p>Ultra-portable 360° capture for quick site walks and progress documentation.</p></div></div>
+    <div class="camera-card"><div class="camera-img">🚁</div><div class="camera-body"><span class="camera-tag">AERIAL · DRONE</span><h4>DJI Mavic 3 Pro</h4><p>Exterior captures, construction progress, and large estate fly-throughs.</p></div></div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-     6. INSTANT QUOTE FORM
-══════════════════════════════════════════════════ -->
-
 <section class="quote-section section" id="quote">
-  <span class="section-tag">SECTION 08 · INSTANT QUOTE FORM</span>
   <div class="quote-grid">
-
-```
-<!-- Left: info -->
-<div class="quote-info">
-  <h2>Get an Instant Quote</h2>
-  <p>Tell us about your project and receive a tailored proposal within 24 hours from our team.</p>
-  <ul class="perks-list">
-    <li><span class="perk-check">✓</span> Free initial consultation included</li>
-    <li><span class="perk-check">✓</span> No commitment required</li>
-    <li><span class="perk-check">✓</span> MENA-based support team</li>
-    <li><span class="perk-check">✓</span> Reply within 24 hours</li>
-  </ul>
-  <div class="zoho-badge">
-    <h5>✓ Official Certified Zoho Partner</h5>
-    <p>Authorized reseller &amp; implementation experts for all Zoho applications across MENA.</p>
-  </div>
-</div>
-
-<!-- Right: form -->
-<div class="form-panel">
-  <div class="form-row">
-    <div class="form-group">
-      <label>Full Name</label>
-      <input type="text" class="form-control" placeholder="Your full name"/>
+    <div class="quote-info">
+      <h2>Get an Instant Quote</h2>
+      <p>Tell us about your project and receive a tailored proposal within 24 hours from our team.</p>
+      <ul class="perks-list">
+        <li><span class="perk-check">✓</span> Free initial consultation included</li>
+        <li><span class="perk-check">✓</span> No commitment required</li>
+        <li><span class="perk-check">✓</span> MENA-based support team</li>
+        <li><span class="perk-check">✓</span> Reply within 24 hours</li>
+      </ul>
+      <div class="zoho-badge">
+        <h5>✓ Official Certified Zoho Partner</h5>
+        <p>Authorized reseller &amp; implementation experts for all Zoho applications across MENA.</p>
+      </div>
     </div>
-    <div class="form-group">
-      <label>Company Name</label>
-      <input type="text" class="form-control" placeholder="Company name"/>
+    <div class="form-panel">
+      <div class="form-row">
+        <div class="form-group"><label>Full Name</label><input type="text" class="form-control" placeholder="Your full name"/></div>
+        <div class="form-group"><label>Company Name</label><input type="text" class="form-control" placeholder="Company name"/></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Email Address</label><input type="email" class="form-control" placeholder="your@email.com"/></div>
+        <div class="form-group"><label>Phone / WhatsApp</label><input type="tel" class="form-control" placeholder="+20 xxx xxx xxxx"/></div>
+      </div>
+      <div class="form-group">
+        <label>Service Required</label>
+        <select class="form-control"><option value="" disabled selected>Select a service…</option><option>Virtual Tours &amp; 3D Scanning</option><option>Zoho CRM / ERP Implementation</option><option>AI Chatbot Development</option><option>Custom Software Development</option><option>Full Digital Transformation Package</option></select>
+      </div>
+      <div class="form-group">
+        <label>Industry</label>
+        <select class="form-control"><option value="" disabled selected>Your industry…</option><option>Real Estate</option><option>Hospitality</option><option>Manufacturing</option><option>Education</option><option>Retail</option><option>Healthcare</option><option>Other</option></select>
+      </div>
+      <div class="form-group">
+        <label>Project Brief</label>
+        <textarea class="form-control" placeholder="Describe your project goals, timeline, and any specific requirements…"></textarea>
+      </div>
+      <button class="form-submit">Request Free Quote →</button>
     </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group">
-      <label>Email Address</label>
-      <input type="email" class="form-control" placeholder="your@email.com"/>
-    </div>
-    <div class="form-group">
-      <label>Phone / WhatsApp</label>
-      <input type="tel" class="form-control" placeholder="+20 xxx xxx xxxx"/>
-    </div>
-  </div>
-  <div class="form-group">
-    <label>Service Required</label>
-    <select class="form-control">
-      <option value="" disabled selected>Select a service…</option>
-      <option>Virtual Tours &amp; 3D Scanning</option>
-      <option>Zoho CRM / ERP Implementation</option>
-      <option>AI Chatbot Development</option>
-      <option>Custom Software Development</option>
-      <option>Full Digital Transformation Package</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label>Industry</label>
-    <select class="form-control">
-      <option value="" disabled selected>Your industry…</option>
-      <option>Real Estate</option>
-      <option>Hospitality</option>
-      <option>Manufacturing</option>
-      <option>Education</option>
-      <option>Retail</option>
-      <option>Healthcare</option>
-      <option>Other</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label>Project Brief</label>
-    <textarea class="form-control" placeholder="Describe your project goals, timeline, and any specific requirements…"></textarea>
-  </div>
-  <button class="form-submit">Request Free Quote →</button>
-</div>
-```
-
   </div>
 </section>
 
 <div class="wf-divider"></div>
 
-<!-- ══════════════════════════════════════════════════
-     7. SUCCESS STORIES
-══════════════════════════════════════════════════ -->
-
 <section class="stories section" id="stories">
-  <span class="section-tag">SECTION 09 · SUCCESS STORIES</span>
   <div class="section-header">
     <h2>High-Profile Success Stories</h2>
     <p>Trusted by leading organizations across Egypt, UAE, KSA, Jordan, Kuwait &amp; Morocco.</p>
   </div>
   <div class="stories-grid">
     <div class="story-card">
-      <div class="story-meta">
-        <div class="story-avatar">🏢</div>
-        <div>
-          <div class="story-title">Real Estate Developer</div>
-          <div class="story-country">EGYPT · REAL ESTATE</div>
-        </div>
-      </div>
+      <div class="story-meta"><div class="story-avatar">🏢</div><div><div class="story-title">Real Estate Developer</div><div class="story-country">EGYPT · REAL ESTATE</div></div></div>
       <p class="story-quote">"IMRSIV's virtual tours increased our property inquiries by 3×. Dubai clients closed deals without ever visiting the site."</p>
       <span class="story-tag">VIRTUAL TOURS + ZOHO CRM</span>
     </div>
     <div class="story-card">
-      <div class="story-meta">
-        <div class="story-avatar">🏨</div>
-        <div>
-          <div class="story-title">5-Star Hotel Chain</div>
-          <div class="story-country">UAE · HOSPITALITY</div>
-        </div>
-      </div>
+      <div class="story-meta"><div class="story-avatar">🏨</div><div><div class="story-title">5-Star Hotel Chain</div><div class="story-country">UAE · HOSPITALITY</div></div></div>
       <p class="story-quote">"We replaced 3 software vendors with IMRSIV's Zoho One suite. Operations became seamless within 60 days."</p>
       <span class="story-tag">ZOHO ONE IMPLEMENTATION</span>
     </div>
     <div class="story-card">
-      <div class="story-meta">
-        <div class="story-avatar">🏭</div>
-        <div>
-          <div class="story-title">Industrial Group</div>
-          <div class="story-country">SAUDI ARABIA · MANUFACTURING</div>
-        </div>
-      </div>
+      <div class="story-meta"><div class="story-avatar">🏭</div><div><div class="story-title">Industrial Group</div><div class="story-country">SAUDI ARABIA · MANUFACTURING</div></div></div>
       <p class="story-quote">"Our factory digital twin reduced onboarding time by 70%. Remote teams globally can now access any facility."</p>
       <span class="story-tag">MATTERPORT PRO3 + ERP</span>
     </div>
     <div class="story-card">
-      <div class="story-meta">
-        <div class="story-avatar">🎓</div>
-        <div>
-          <div class="story-title">Private University</div>
-          <div class="story-country">JORDAN · EDUCATION</div>
-        </div>
-      </div>
+      <div class="story-meta"><div class="story-avatar">🎓</div><div><div class="story-title">Private University</div><div class="story-country">JORDAN · EDUCATION</div></div></div>
       <p class="story-quote">"The AI chatbot handles 80% of student inquiries automatically — enrollment conversion went up 45%."</p>
       <span class="story-tag">AI CHATBOT + CRM</span>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-     8. CONSULTATION CTA
-══════════════════════════════════════════════════ -->
-
 <section class="cta-section section" id="consult">
-  <span class="section-tag" style="color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1)">SECTION 10 · CTA</span>
   <div class="cta-text">
     <h2>Ready to Transform Your Business?</h2>
     <p>Book a free 30-minute consultation with our experts. No commitment — just clarity and a clear roadmap forward.</p>
@@ -1180,70 +662,22 @@ padding:16px 20px;z-index:200;max-width:220px;
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-     9. FOOTER
-══════════════════════════════════════════════════ -->
-
 <footer class="footer section">
-  <span class="section-tag" style="color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1)">SECTION 11 · FOOTER</span>
   <div class="footer-grid">
     <div class="footer-brand">
-      <a href="#" class="nav-logo" style="color:rgba(255,255,255,0.7)">
-        <span class="nav-logo-dot"></span> IMRSIV
-      </a>
+      <a href="#" class="nav-logo" style="color:rgba(255,255,255,0.7)"><span class="nav-logo-dot"></span> IMRSIV</a>
       <p>Your Strategic Partner in Digital Transformation across the MENA region.</p>
     </div>
-    <div class="footer-col">
-      <h5>Solutions</h5>
-      <ul>
-        <li><a href="#">Virtual Tours</a></li>
-        <li><a href="#">Zoho Suite</a></li>
-        <li><a href="#">AI Chatbots</a></li>
-        <li><a href="#">360° Cameras</a></li>
-        <li><a href="#">Custom Software</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>Company</h5>
-      <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Success Stories</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>Industries</h5>
-      <ul>
-        <li><a href="#">Real Estate</a></li>
-        <li><a href="#">Hospitality</a></li>
-        <li><a href="#">Manufacturing</a></li>
-        <li><a href="#">Education</a></li>
-        <li><a href="#">Retail</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>Contact</h5>
-      <ul>
-        <li><a href="#"><span class="__cf_email__" data-cfemail="274f424b4b48674e4a55544e51094448">[email&#160;protected]</span></a></li>
-        <li><a href="#">+20 100 000 0000</a></li>
-        <li><a href="#">Cairo, Egypt</a></li>
-        <li><a href="#">imrsiv.co</a></li>
-        <li><a href="#">WhatsApp Us</a></li>
-      </ul>
-    </div>
+    <div class="footer-col"><h5>Solutions</h5><ul><li><a href="#">Virtual Tours</a></li><li><a href="#">Zoho Suite</a></li><li><a href="#">AI Chatbots</a></li><li><a href="#">360° Cameras</a></li><li><a href="#">Custom Software</a></li></ul></div>
+    <div class="footer-col"><h5>Company</h5><ul><li><a href="#">About Us</a></li><li><a href="#">Success Stories</a></li><li><a href="#">Careers</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li></ul></div>
+    <div class="footer-col"><h5>Industries</h5><ul><li><a href="#">Real Estate</a></li><li><a href="#">Hospitality</a></li><li><a href="#">Manufacturing</a></li><li><a href="#">Education</a></li><li><a href="#">Retail</a></li></ul></div>
+    <div class="footer-col"><h5>Contact</h5><ul><li><a href="#">hello@imrsiv.co</a></li><li><a href="#">+20 100 000 0000</a></li><li><a href="#">Cairo, Egypt</a></li><li><a href="#">imrsiv.co</a></li><li><a href="#">WhatsApp Us</a></li></ul></div>
   </div>
   <div class="footer-bottom">
     <p>© 2026 IMRSIV. ALL RIGHTS RESERVED.</p>
-    <div class="footer-badges">
-      <span class="footer-badge">CERTIFIED ZOHO PARTNER</span>
-      <span class="footer-badge">MATTERPORT SPECIALIST</span>
-    </div>
+    <div class="footer-badges"><span class="footer-badge">CERTIFIED ZOHO PARTNER</span><span class="footer-badge">MATTERPORT SPECIALIST</span></div>
   </div>
 </footer>
-
-<!-- ─── WIREFRAME LEGEND ───────────────────────────── -->
 
 <div class="wf-annotations">
   <h6>WIREFRAME SECTIONS</h6>
@@ -1261,7 +695,6 @@ padding:16px 20px;z-index:200;max-width:220px;
 </div>
 
 <script>
-// ── Tab bar interaction ─────────────────────────────
 const tabs = document.querySelectorAll('.tab-item');
 const contents = document.querySelectorAll('.tab-content');
 tabs.forEach(tab => {
@@ -1274,33 +707,12 @@ tabs.forEach(tab => {
   });
 });
 
-// ── Customer Journey interactions ───────────────────
 const stepData = [
-  {
-    what:['30-minute free consultation call','Business & tech stack audit','Pain points & goals mapping','Competitor & industry benchmark','Solution options walkthrough'],
-    outputs:['Discovery questionnaire (shared doc)','Recorded session (on request)','Needs analysis summary PDF','Initial solution recommendation','Estimated timeline & budget range'],
-    kpis:[['30 min','Average discovery call duration'],['48 hrs','Proposal delivered after discovery'],['100%','Free — no obligation to proceed']]
-  },
-  {
-    what:['Custom solution architecture designed','Tech stack selection & rationale','Phased implementation roadmap','ROI projections & success metrics','Formal proposal document prepared'],
-    outputs:['Detailed proposal PDF','Implementation timeline (Gantt)','Pricing breakdown by phase','SLA & support terms draft','Kickoff meeting scheduled'],
-    kpis:[['48 hrs','Proposal turnaround time'],['3 phases','Typical project structure'],['1 week','Average proposal-to-signature']]
-  },
-  {
-    what:['Matterport on-site scanning sessions','Zoho apps setup & customization','AI chatbot training & integration','Custom software development sprints','UAT (user acceptance testing)'],
-    outputs:['Live Matterport digital twin','Configured Zoho environment','Deployed AI chatbot (staging)','Sprint review demos','QA test reports & sign-off'],
-    kpis:[['2–8 wks','Typical build duration'],['Weekly','Client progress syncs'],['99.9%','Uptime SLA commitment']]
-  },
-  {
-    what:['On-site or remote team training','Admin & end-user onboarding','Soft launch with limited users','Full go-live rollout','Hypercare support (30 days)'],
-    outputs:['Training recordings & SOPs','Admin user guide PDF','Launch checklist completed','Live environment handover','Zoho Desk support portal active'],
-    kpis:[['4 hrs','Average training session'],['30 days','Hypercare support window'],['< 2 hrs','Average issue response time']]
-  },
-  {
-    what:['Monthly performance review calls','Zoho Analytics dashboard reviews','Feature expansion & new modules','Ongoing AI model improvements','Quarterly strategy sessions'],
-    outputs:['Monthly KPI report','Optimization recommendations','New feature releases','Expanded Zoho module rollouts','Annual transformation review'],
-    kpis:[['Monthly','Performance review cadence'],['45%','Avg. efficiency gain (clients)'],['3×','Average ROI within 12 months']]
-  }
+  {what:['30-minute free consultation call','Business & tech stack audit','Pain points & goals mapping','Competitor & industry benchmark','Solution options walkthrough'],outputs:['Discovery questionnaire (shared doc)','Recorded session (on request)','Needs analysis summary PDF','Initial solution recommendation','Estimated timeline & budget range'],kpis:[['30 min','Average discovery call duration'],['48 hrs','Proposal delivered after discovery'],['100%','Free — no obligation to proceed']]},
+  {what:['Custom solution architecture designed','Tech stack selection & rationale','Phased implementation roadmap','ROI projections & success metrics','Formal proposal document prepared'],outputs:['Detailed proposal PDF','Implementation timeline (Gantt)','Pricing breakdown by phase','SLA & support terms draft','Kickoff meeting scheduled'],kpis:[['48 hrs','Proposal turnaround time'],['3 phases','Typical project structure'],['1 week','Average proposal-to-signature']]},
+  {what:['Matterport on-site scanning sessions','Zoho apps setup & customization','AI chatbot training & integration','Custom software development sprints','UAT (user acceptance testing)'],outputs:['Live Matterport digital twin','Configured Zoho environment','Deployed AI chatbot (staging)','Sprint review demos','QA test reports & sign-off'],kpis:[['2–8 wks','Typical build duration'],['Weekly','Client progress syncs'],['99.9%','Uptime SLA commitment']]},
+  {what:['On-site or remote team training','Admin & end-user onboarding','Soft launch with limited users','Full go-live rollout','Hypercare support (30 days)'],outputs:['Training recordings & SOPs','Admin user guide PDF','Launch checklist completed','Live environment handover','Zoho Desk support portal active'],kpis:[['4 hrs','Average training session'],['30 days','Hypercare support window'],['< 2 hrs','Average issue response time']]},
+  {what:['Monthly performance review calls','Zoho Analytics dashboard reviews','Feature expansion & new modules','Ongoing AI model improvements','Quarterly strategy sessions'],outputs:['Monthly KPI report','Optimization recommendations','New feature releases','Expanded Zoho module rollouts','Annual transformation review'],kpis:[['Monthly','Performance review cadence'],['45%','Avg. efficiency gain (clients)'],['3×','Average ROI within 12 months']]}
 ];
 
 const stepNodes = document.querySelectorAll('.step-node');
@@ -1310,18 +722,9 @@ const detail = document.getElementById('journeyDetail');
 function renderDetail(idx) {
   const d = stepData[idx];
   detail.innerHTML = `
-    <div class="journey-detail-col">
-      <h4>What Happens</h4>
-      <ul>${d.what.map(i=>`<li><span class="jd-dot"></span>${i}</li>`).join('')}</ul>
-    </div>
-    <div class="journey-detail-col">
-      <h4>Tools &amp; Outputs</h4>
-      <ul>${d.outputs.map(i=>`<li><span class="jd-dot"></span>${i}</li>`).join('')}</ul>
-    </div>
-    <div class="journey-detail-col">
-      <h4>Key Metrics</h4>
-      ${d.kpis.map(([val,lbl])=>`<div class="journey-kpi" style="margin-bottom:10px"><span>${val}</span><p>${lbl}</p></div>`).join('')}
-    </div>`;
+    <div class="journey-detail-col"><h4>What Happens</h4><ul>${d.what.map(i=>`<li><span class="jd-dot"></span>${i}</li>`).join('')}</ul></div>
+    <div class="journey-detail-col"><h4>Tools &amp; Outputs</h4><ul>${d.outputs.map(i=>`<li><span class="jd-dot"></span>${i}</li>`).join('')}</ul></div>
+    <div class="journey-detail-col"><h4>Key Metrics</h4>${d.kpis.map(([val,lbl])=>`<div class="journey-kpi" style="margin-bottom:10px"><span>${val}</span><p>${lbl}</p></div>`).join('')}</div>`;
 }
 
 stepNodes.forEach((node, idx) => {
@@ -1345,6 +748,5 @@ phaseButtons.forEach((btn, i) => {
   });
 });
 </script>
-
 </body>
 </html>
